@@ -21,8 +21,7 @@
     <info
         organisation="org.processmining.openslex"
         module="openslex"
-        revison="0.4">
-	</info>
+        revison="0.4" />
 	
 	<dependency org="org.xerial" name="sqlite-jdbc" rev="3.8.11.2"/>
 	<dependency org="prom-libs" name="OpenXES" rev="2.0" />
