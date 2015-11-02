@@ -20,8 +20,7 @@
 <ivy-module version="2.0">
     <info
         organisation="org.processmining.openslex"
-        module="openslex"
-        revison="0.4" />
+        module="openslex" />
 	
 	<dependency org="org.xerial" name="sqlite-jdbc" rev="3.8.11.2"/>
 	<dependency org="prom-libs" name="OpenXES" rev="2.0" />
