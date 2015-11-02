@@ -21,7 +21,6 @@
     <info
         organisation="org.processmining.openslex"
         module="openslex"
-        status="integration"
         revison="0.4">
 	</info>
 	
