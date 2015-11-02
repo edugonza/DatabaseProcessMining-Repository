@@ -19,7 +19,7 @@
 -->
 <ivy-module version="2.0">
     <info
-        organisation="org.processmining.openslex"
+        organisation="db-process-mining"
         module="openslex"
         revision="0.4">
     </info>
