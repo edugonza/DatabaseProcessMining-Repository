@@ -44,5 +44,5 @@ For OpenSLEX:
 
 For MetaModel-POQL:
 
-	<dependency org="db-process-mining" name="MetaModel-POQL" rev="0.1"/>
+	<dependency org="db-process-mining" name="MetaModel-POQL" rev="0.2"/>
 	
