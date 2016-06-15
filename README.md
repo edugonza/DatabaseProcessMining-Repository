@@ -40,8 +40,8 @@ Depencency block in ivy.xml:
 
 For OpenSLEX:
 
-	<dependency org="db-process-mining" name="OpenSLEX" rev="0.4"/>
+	<dependency org="db-process-mining" name="OpenSLEX" rev="0.5"/>
 
-For MetaModel-POQL:
+For DAPOQ-Lang:
 
-	<dependency org="db-process-mining" name="MetaModel-POQL" rev="0.2"/>
+	<dependency org="db-process-mining" name="DAPOQ-Lang" rev="0.5"/>
