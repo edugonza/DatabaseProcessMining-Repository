@@ -23,14 +23,6 @@
         module="DAPOQ-Lang"
         revision="0.5">
 	</info>
-    <configurations defaultconfmapping="*->@">
-        <conf name="lin32" />
-        <conf name="lin64" />
-        <conf name="mac32" />
-        <conf name="mac64" />
-        <conf name="win32" />
-        <conf name="win64" />
-    </configurations>
 	<dependencies>
 		<dependency org="org.antlr" name="antlr4" rev="4.5.1-1"/>
 		<dependency org="in.jlibs" name="org-netbeans-api-visual" rev="RELEASE65"/>
