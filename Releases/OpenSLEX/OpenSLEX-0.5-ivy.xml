@@ -23,14 +23,6 @@
         module="OpenSLEX"
         revision="0.5">
     </info>
-    <configurations defaultconfmapping="*->@">
-        <conf name="lin32" />
-        <conf name="lin64" />
-        <conf name="mac32" />
-        <conf name="mac64" />
-        <conf name="win32" />
-        <conf name="win64" />
-    </configurations>
 	<dependencies>
 		<dependency org="org.jgrapht" name="jgrapht-core" rev="0.9.2"/>
 		<dependency org="org.xerial" name="sqlite-jdbc" rev="3.8.11.2"/>
