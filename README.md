@@ -44,4 +44,4 @@ For OpenSLEX:
 
 For DAPOQ-Lang:
 
-	<dependency org="db-process-mining" name="DAPOQ-Lang" rev="0.6"/>
+	<dependency org="db-process-mining" name="DAPOQ-Lang" rev="0.7"/>
