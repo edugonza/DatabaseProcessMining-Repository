@@ -42,14 +42,14 @@ for i in `cat ${CLASSESFILE}`; do
     CLASSNAME_LOWER=`echo ${i} | tr '[:upper:]' '[:lower:]' `
     URL="http://www.se80.co.uk/saptables/${CLASSNAME_LOWER:0:1}/${CLASSNAME_LOWER:0:4}/${CLASSNAME_LOWER}.htm"
 
-    FIELDS=`curl -s ${URL} | tidy -q -asxhtml 2> /dev/null | tidy -q -i 2> /dev/null | xmlstarlet -q fo -R | sed -e 's/ xmlns.*=".*"//g' | xmlstarlet sel -T -t -m '//tr[@class="keyField"]' -n -v "td[1]/a/text()" 2> /dev/null`
+    FIELDS=`curl -s ${URL} | tidy -q -asxhtml 2> /dev/null | tidy -q -i 2> /dev/null | xmlstarlet -q fo -R | sed -e 's/ xmlns.*=".*"//g' | xmlstarlet sel -T -t -m '//tr[@class="keyField"]' -n -v "td[1]/*/text()" 2> /dev/null`
 
     if [ "${FIELDS}" != "" ]; then
         for j in ${FIELDS}; do
             echo "SAP;PK_${i};${i};;${j};" >> ${KEYSFILE}
         done
 
-        FKFIELDS=`curl -s ${URL} | tidy -q -asxhtml 2> /dev/null | tidy -q -i 2> /dev/null | xmlstarlet -q fo -R | sed -e 's/ xmlns.*=".*"//g' | xmlstarlet sel -T -t -m '//tr[@class="otherField"]/td[5]/a/text()' -n -v "concat(.,';',../../../td[1]/a/text())" 2> /dev/null`
+        FKFIELDS=`curl -s ${URL} | tidy -q -asxhtml 2> /dev/null | tidy -q -i 2> /dev/null | xmlstarlet -q fo -R | sed -e 's/ xmlns.*=".*"//g' | xmlstarlet sel -T -t -m '//tr[@class="otherField"]/td[5]/a/text()' -n -v "concat(.,';',../../../td[1]/*/text())" 2> /dev/null`
         if [ "${FKFIELDS}" != "" ]; then
             index=1
             for j in ${FKFIELDS}; do
@@ -63,7 +63,7 @@ for i in `cat ${CLASSESFILE}`; do
 
                     dest_class_lower=`echo ${dest_class} | tr '[:upper:]' '[:lower:]'`
                     URL_2="http://www.se80.co.uk/saptables/${dest_class_lower:0:1}/${dest_class_lower:0:4}/${dest_class_lower}.htm"
-                    TARGET_KEYS=`curl -s ${URL_2} | tidy -q -asxhtml 2> /dev/null | tidy -q -i 2> /dev/null | xmlstarlet -q fo -R | sed -e 's/ xmlns.*=".*"//g' | xmlstarlet sel -T -t -m '//tr[@class="keyField"]' -n -v "td[1]/a/text()" 2> /dev/null`
+                    TARGET_KEYS=`curl -s ${URL_2} | tidy -q -asxhtml 2> /dev/null | tidy -q -i 2> /dev/null | xmlstarlet -q fo -R | sed -e 's/ xmlns.*=".*"//g' | xmlstarlet sel -T -t -m '//tr[@class="keyField"]' -n -v "td[1]/*/text()" 2> /dev/null`
 
                     PREFERRED_FIELD=""
                     MIN_DISTANCE="-1"
